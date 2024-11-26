@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="slidder-wrapper">
+    <div class="slider">
+      <img id="slide-1" src="carusel1.jpg">
+      <img id="slide-2" src="carusel2.jpg">
+      <img id="slide-3" src="carusel3.jpg">
+      <img id="slide-4" src="carusel4.jpg">
+      <img id="slide-5" src="carusel5.jpg">
+    </div>
+    <div class="slider-nav">
+      <a href="#slide-1"></a>
+      <a href="#slide-2"></a>
+      <a href="#slide-3"></a>
+      <a href="#slide-4"></a>
+      <a href="#slide-5"></a>
+    </div>
+  </div>
+</div>
+
+/* Container for the entire carousel */
+.container {
+  padding: 2rem;
+  margin: 100px auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Wrapper to control the overflow of the slider */
+.slidder-wrapper {
+  position: relative;
+  max-width: 100%;  /* Width of the carousel */
+  overflow: hidden; /* Hide content that overflows */
+  margin: 0 auto;
+}
+
+/* The flex container for the images */
+.slidder {
+  display: flex;  /* Align images horizontally */
+  gap: 10px; /* Optional: space between images */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enables snap scrolling */
+  scroll-behavior: smooth; /* Smooth scroll behavior */
+  padding-bottom: 10px; /* Optional: Add padding at the bottom */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+/* Style for the images */
+.slidder img {
+  width: 100%; /* Make each image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 300px; /* Limit the width of each image */
+  flex-shrink: 0; /* Prevent images from shrinking */
+  object-fit: cover; /* Ensure the image covers the area */
+  scroll-snap-align: start; /* Align each image to the start when snapping */
+}
+
+<div class="slider-frame">
+  <div class="slider-images">
+    <div class="img-container">
+       <img src="carusel1.jpg">
+    </div>
+    <div class="img-container">
+      <img src="carusel2.jpg">
+    </div>
+    <div class="img-container">
+      <img src="carusel3.jpg">
+    </div>
+    <div class="img-container">
+      <img src="carusel4.jpg">
+    </div>
+    <div class="img-container">
+      <img src="carusel5.jpg">
+    </div>
+  </div>
+</div>
+
+.slider-frame
+{
+  overflow: hidden;
+  height: 800px;
+  width:1200px;
+  margin-left: 360px;
+  margin-top: 20px;
+}
+
+@keyframes slider_animation {
+  0% {left:0px;}
+  10%{left:0px;}
+  20%{left:1200px;}
+  30%{left:1200px;}
+  40%{left:2400px;}
+  50%{left:2400px;}
+  60%{left:2400px;}
+  70%{left:1200px;}
+  80%{left:0px;}
+  90%{left:0px;}
+  100%{left:0px;}
+}
+
+@-webkit-keyframes slider_animation {
+  0% {left:0px;}
+  10%{left:0px;}
+  20%{left:1200px;}
+  30%{left:1200px;}
+  40%{left:2400px;}
+  50%{left:2400px;}
+  60%{left:2400px;}
+  70%{left:1200px;}
+  80%{left:0px;}
+  90%{left:0px;}
+  100%{left:0px;}
+}
+
+.slider-image{
+  width: 3600px;
+  height: 800;
+  margin: 0 0 0 -2400px;
+  position: relative;
+  animation-name: slider_animation;
+  -webkit-animation-name: slider_animation;
+  animation-duration: 33s;
+  -webkit-animation-duration: 33s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  animation-play-state: running;
+  -moz-animation-play-state: running;
+}
+
+.img-container
+{
+  height: 800px;
+  width: 1200px;
+  position: relative;
+  float: left;
+}

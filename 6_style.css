@@ -1,0 +1,726 @@
+@keyframes fade-in
+{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+/*GENERAL---------------------------------------------------------------------------------------------------------------*/
+:root
+{
+  --background-color: #bbffb4fa;
+  --logo-color:#123100;
+  --navbar-inactive:#d50342;
+  --navbar-active:#123100;
+  --text-color:black;
+  --background-image: url('./poze_site/fundal/fundal_light.jpg');
+}
+
+.darkmode
+{
+  --background-color: #131f11f8;
+  --logo-color:#bbffb4fa;
+  --navbar-inactive:#f87ea3;
+  --navbar-active:rgb(130, 196, 136);
+  --text-color:rgb(255, 255, 255);
+  --background-image: url('./poze_site/fundal/fundal_dark.jpg');
+
+}
+
+#theme-switch
+{
+  height:45px;
+  width:45px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: var( --background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  top:10px;
+  right:20px;
+}
+
+#theme-switch svg
+{
+  fill: var(--logo-color);
+}
+  
+#theme-switch svg:last-child
+{
+  display: none;
+}
+  
+.darkmode #theme-switch svg:first-child
+{
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child
+{
+  display: block;
+}
+
+body 
+{
+  margin:0;
+  font-family: 'Karla', sans-serif;
+  padding: 0;
+  background-image: var(--background-image); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center; 
+}
+
+.main
+{
+  padding:50px;
+  margin-top:50px;
+  height:1500px;
+  padding: 10px 20px;
+
+}
+
+.content
+{
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-top: 50px;
+  color:var(--text-color);
+}
+
+
+a 
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.floating-button
+{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width: 65px;
+  height: 65px;
+  margin: 35px 25px;
+  background: var(--logo-color);
+  border-radius:50%;
+  color: var(  --background-color);
+  line-height: 65px;
+  text-align: center;
+  font-size:23px;
+  z-index:100;
+  cursor:pointer;
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+
+/*NAVBAR-----------------------------------------------------------------------------------------------------------*/
+.header
+{
+  position: sticky;
+  overflow: hidden;
+}
+
+.navbar
+{
+  border-radius: 10px;
+  position: fixed;
+  width:100%;
+  overflow: hidden;
+  padding-top: none;
+  margin-top: none;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+  font-size: 20px;
+
+}
+
+.leaf-icon 
+{
+  height: 17px; 
+  width: auto;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.frunza-stanga
+{
+  height: 17px; 
+  width: auto;
+  margin-left: 7px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.frunza-dreapta
+{
+    height: 17px; 
+    width: auto;
+    margin-right: 7px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.flori-logo
+{
+  height: 5px; 
+  width: 5px;
+  margin-left: 3px;
+  scale:(0.5);
+}
+      
+.logo
+{
+  font-size: 20px;
+  font-weight: 1000;
+  color: var(--logo-color);
+  padding-left: 35px;
+}
+
+.floare-stanga
+{
+  height: 20px; 
+  width: auto;
+  margin-left: 7px;
+}
+    
+.floare-dreapta
+{
+  height: 20px; 
+  width: auto;
+  margin-right: 7px;
+}
+
+.links
+{
+
+  font-size: 20px;
+  list-style: none;
+  display: flex;
+  color: var(--navbar-inactive);
+  padding-right: 55px;
+}
+
+
+.link-item
+{
+ 
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 2s, text-decoration 2s;
+}
+
+.link-item:hover
+{
+  
+  color: var(--navbar-active);
+  text-decoration: underline;
+}
+
+
+.link-item:hover  .frunza-stanga 
+{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.link-item:hover  .frunza-dreapta 
+{
+  opacity: 1;
+  transform: scale(1);
+  font-weight: 900;
+}
+
+.active 
+{
+  font-weight: 900;
+  color: var(--navbar-active);
+  text-decoration: underline;
+}
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+/*SEARCHBAR---------------------------------------------------------------------------------------------------------*/
+.searchbar
+{
+  margin: 50px auto 0;
+  height: 30px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #feffff;
+  border-radius: 30px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-top: 50px;
+  margin-bottom: none;
+}
+
+.searchbar:hover input
+{
+  width:400px;
+}
+
+.searchbar input
+{
+  width:0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+}
+
+.searchbar a .fas
+{
+  color: #1daff1;
+  font-size:10px;
+}
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+/*CONTAINERE PT CAUTARE---------------------------------------------------------------------------------------------*/
+#root{
+  width:100%;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-gap:20px;
+}
+
+.box 
+{
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.img-box 
+{
+  width: 100%;
+  height: 176px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images 
+{
+  box-shadow: var(--logo-color);
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10%;
+}
+
+.bottom 
+{
+  color: var(--text-color);
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 110px;
+}
+
+h2 
+{
+  font-size: 20px;
+  color: orangered;
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+/*BUTOANE POP UP---------------------------------------------------------------------------------------------------*/
+.button_pop_up {
+  align-self: center;
+  background-color: var(  --background-color);
+  background-image: none;
+  background-position: 0 90%;
+  font-family: 'Karla', sans-serif;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: var(--logo-color);
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button_pop_up:hover {
+  box-shadow: var(--logo-color);
+  transform: translate3d(0, 2px, 0);
+}
+
+.button_pop_up:focus {
+  box-shadow: var(--logo-color);
+}
+
+.popip-container
+{
+  position: fixed; /* Fixează containerul în raport cu fereastra */
+  top: 50%; /* Poziționează pe verticală la mijloc */
+  left: 50%; /* Poziționează pe orizontală la mijloc */
+  transform: translate(-50%, -50%); 
+
+  width: 100%;
+  height: 100%;
+  background: seagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+.popup-container.active
+{
+  opacity: 1;
+  pointer-events: auto;
+  transition: .4s ease;
+
+
+}
+
+.popup-container .popup-box
+{
+  width: 500px;
+  background: white;
+  border-radius: 0 0 10px rgba(0,0,0,.1);
+  padding: 30px;
+  transform: scale(0);
+  max-width: 90%; /* Adaptează dimensiunea pentru ecrane mici */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Umbră pentru efect */
+  transform: scale(0); /* Inițial, este invizibil */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Animație pentru apariție */
+}
+
+.popup-container.active .popup-box
+{
+  transform: scale(1);
+  transition: .4s ease;
+  transition-delay: .25s;
+}
+.popup-box h1
+{
+  color: #333;
+  line-height: 1;
+  padding: 30px;
+}
+
+p.popup-box p
+{
+  color: #333;
+  margin: 12px 0 20px;
+}
+
+.popup-box .close-btn
+{
+  align-self: center;
+  background-color: var(  --background-color);
+  background-image: none;
+  background-position: 0 90%;
+  font-family: 'Karla', sans-serif;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: var(--logo-color);
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*FORMULAR COTACT--------------------------------------------------------------------------------------------------------*/
+.completare_formular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 420px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px 40px;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  backdrop-filter: blur(20px);
+  margin: 100px auto;
+}
+
+.completare_formular h1 {
+  font-size: 36px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.completare_formular .input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 30px 0;
+  position: relative;
+}
+
+
+.input-box input {
+
+  flex: 1; 
+ width: 100%;
+ height: 100%;
+ background: transparent;
+ border: none;
+ outline: none;
+ border: 2px solid var(--text-color);
+ border-radius: 40px;
+font-size: 16px;
+color: var(--text-color);
+padding: 20px 45px 20px 20px;
+ 
+}
+
+.input-box input::placeholder{
+  color:var(--text-color);
+}
+
+.input-box i {
+  position:absolute;
+right: 20px;
+  color: var(--text-color); 
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+
+}
+
+.completare_formular .btn
+{
+  width: 100%;
+  height: 45px;
+  background: var(--logo-color);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color:var(--background-color);
+  font-weight: 600;
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+/*CARUSEL IMAGINI---------------------------------------------------------------------------------------------------*/
+.container_imagini{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imgContainer{
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.slide_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30px 0 30px;
+}
+
+img{
+  position: relative;
+  height: 240px;
+  width:  370px;
+  transition: 0.7s;
+  border-radius: 20px;
+}
+
+.button{
+  position: absolute;
+  height: 240px;
+  width:  370px;
+  transition: 0.7s;
+  border-radius: 20px;
+}
+
+
+#slider1:target ~ .imgContainer #img1,
+#slider1:target ~ .imgContainer #button1{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+#slider2:target ~ .imgContainer #img2,
+#slider2:target ~ .imgContainer #button2{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+#slider3:target ~ .imgContainer #img3,
+#slider3:target ~ .imgContainer #button3{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+#slider4:target ~ .imgContainer #img4,
+#slider4:target ~ .imgContainer #button4{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+#slider5:target ~ .imgContainer #img5,
+#slider5:target ~ .imgContainer #button5{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+#slider6:target ~ .imgContainer #img6,
+#slider6:target ~ .imgContainer #button6{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+#slider7:target ~ .imgContainer #img7,
+#slider7:target ~ .imgContainer #button7{
+  height: 350px;
+  width:  546px;
+  background-color: transparent;
+}
+
+
+#slider1:target ~ .imgContainer{
+  left: 60%;
+}
+#slider2:target ~ .imgContainer{
+  left: 40%;
+}
+#slider3:target ~ .imgContainer{
+  left: 20%;
+}
+#slider4:target ~ .imgContainer{
+  left: 0%;
+}
+#slider5:target ~ .imgContainer{
+  left: -20%;
+}
+#slider6:target ~ .imgContainer{
+  left: -40%;
+}
+#slider7:target ~ .imgContainer{
+  left: -60%;
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+
+
+.to-top {
+  background: white;
+  position: fixed;
+  bottom: 16px;
+  right:32px;
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:32px;
+  color:#1f1f1f;
+  text-decoration: none;
+  opacity:0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.to-top.active {
+  bottom:32px;
+  pointer-events: auto;
+  opacity:1;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+.show-popup
+{
+
+
+}
