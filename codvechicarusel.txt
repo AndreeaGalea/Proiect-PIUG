@@ -136,3 +136,103 @@
   position: relative;
   float: left;
 }
+
+
+
+<div class="floating-button"><a href="5_contact.html">?</a></div>
+<div class="content">
+  <h1>Acasă</h1>
+  <p>Componente</p>
+  <p>prezentare site</p>
+  <p>prezentare pagini</p>
+  <p>prezentare social media</p>
+  <p><a href="https://www.youtube.com/watch?v=MYFgtnKMDp4&list=PLpwngcHZlPac0R1SCOLMRu6FBZTTuEyF2&ab_channel=CodingNepal">tutorial 1</a></p>
+  </div>
+
+
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Previne trimiterea formularului
+  
+    // Preluăm valorile câmpurilor
+    const nume = document.getElementById("nume").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefon = document.getElementById("telefon").value.trim();
+  
+    let valid = true;
+  
+    // Validarea numelui
+    if (!/^[a-zA-Z\s]{3,}$/.test(nume)) {
+      valid = false;
+    }
+  
+    // Validarea emailului
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      valid = false;
+    }
+  
+    // Validarea numărului de telefon
+    if (!/^0\d{9}$/.test(telefon)) {
+      valid = false;
+    }
+  
+    // Gestionarea popup-ului
+    const popup = document.getElementById("popupMessage");
+    const popupText = document.getElementById("popupText");
+  
+    if (valid) {
+      popupText.textContent = "Formular valid! Mesajul a fost trimis cu succes.";
+      popup.className = "popup visible success"; // Afișăm popup-ul cu stil de succes
+    } else {
+      popupText.textContent = "Formularul conține erori. Vă rugăm să verificați câmpurile.";
+      popup.className = "popup visible error"; // Afișăm popup-ul cu stil de eroare
+    }
+  
+    // Ascundem popup-ul după 5 secunde
+    setTimeout(() => {
+      popup.className = "popup hidden";
+    }, 5000);
+  });
+  
+
+
+  
+<div class="completare_formular">
+  <form id="form">
+  <h1> Ai o nelămurire? Contactează-ne!</h1>
+  <div class="inputbox">
+      <input type="text" id="nume" name="nume" placeholder="Nume" required>
+      <i class="fa-solid fa-user"></i>
+      <div class="error"></div>
+  </div>
+  <div class = "inputbox">
+      <input type ="text" id="email" name="email" placeholder ="Email" required>
+      <i class="fa-solid fa-envelope"></i>
+      <div class="error"></div>
+  </div>
+  <div class = "inputbox">
+      <input type ="text" id="telefon" name="telefon" placeholder ="Numar de telefon" required>
+      <i class="fa-solid fa-phone"></i>
+    
+  </div>
+  <div class = "inputbox">
+      <input type ="text" placeholder ="Mesaj" required>
+      <i class="fa-solid fa-comment"></i>
+      
+  </div>
+  <button type="submit" class ="btn">Trimite Mesaj</button>
+
+  </form>
+</div>
+
+
+.validare_formular {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.validare_formular label {
+	display: inline-block;
+	margin-bottom: 5px;
+}

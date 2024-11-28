@@ -14,7 +14,7 @@
   --logo-color:#123100;
   --navbar-inactive:#d50342;
   --navbar-active:#123100;
-  --text-color:black;
+  --text-color:#123100;
   --background-image: url('./poze_site/fundal/fundal_light.jpg');
 }
 
@@ -23,8 +23,8 @@
   --background-color: #131f11f8;
   --logo-color:#bbffb4fa;
   --navbar-inactive:#f87ea3;
-  --navbar-active:rgb(130, 196, 136);
-  --text-color:rgb(255, 255, 255);
+  --navbar-active:#bbffb4fa;
+  --text-color:#deeedcfa;
   --background-image: url('./poze_site/fundal/fundal_dark.jpg');
 
 }
@@ -101,6 +101,24 @@ a
     text-decoration: none;
 }
 
+
+h1
+{
+ 
+  color:var(--text-color);
+}
+
+
+video {
+  display: block;
+  margin: auto;
+}
+
+
+p
+{
+  color:var(--text-color);
+}
 .floating-button
 {
   position: fixed;
@@ -257,7 +275,7 @@ a
 {
   margin: 50px auto 0;
   height: 30px;
-  width: 75%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
@@ -298,7 +316,7 @@ a
 #root{
   width:100%;
   display: grid;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(3,1fr);
   grid-gap:20px;
 }
 
@@ -364,12 +382,11 @@ h2
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: var(--logo-color);
+  border-color: var(--logo-color);
   box-sizing: border-box;
-  color: #41403e;
+  color: var(--text-color);
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -516,7 +533,7 @@ p.popup-box p
   color: var(--text-color);
 }
 
-.completare_formular .input-box {
+.completare_formular .inputbox {
   display: flex;
   align-items: center;
   height: 50px;
@@ -526,7 +543,7 @@ p.popup-box p
 }
 
 
-.input-box input {
+.inputbox input {
 
   flex: 1; 
  width: 100%;
@@ -542,11 +559,11 @@ padding: 20px 45px 20px 20px;
  
 }
 
-.input-box input::placeholder{
+.inputbox input::placeholder{
   color:var(--text-color);
 }
 
-.input-box i {
+.inputbox i {
   position:absolute;
 right: 20px;
   color: var(--text-color); 
@@ -692,26 +709,35 @@ img{
 
 
 .to-top {
-  background: white;
-  position: fixed;
-  bottom: 16px;
-  right:32px;
-  width:50px;
-  height:50px;
-  border-radius: 50%;
+  bottom: 0;
+  right:0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size:32px;
-  color:#1f1f1f;
-  text-decoration: none;
   opacity:0;
   pointer-events: none;
   transition: all .4s;
+
+
+  position: fixed;
+
+  width: 65px;
+  height: 65px;
+
+  margin: 35px 25px;
+
+  background: var(--logo-color);
+
+  border-radius:50%;
+  color: var(  --background-color);
+
+  font-size:23px;
+
+  
 }
 
 .to-top.active {
-  bottom:32px;
+ 
   pointer-events: auto;
   opacity:1;
 }
@@ -719,8 +745,213 @@ img{
 
 /*------------------------------------------------------------------------------------------------------------------*/
 
-.show-popup
+section
 {
+  padding: 0 14%;
+}
 
+.welcome
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid; /* Enables grid layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center;
+  gap: 20rem;
+ 
+  flex-direction: row; /* Arrange items in a row */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Add spacing between text and image */
+}
+
+.welcome-image
+{
+  flex: 1; /* Allow the image to grow as needed */
+  height: auto;
+  object-fit: cover; /* Ensures the image fills its container neatly */
+  max-width: 100%; /* Prevents oversizing */
+}
+
+.welcome-text h1
+{
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 15px 0;
+  color:var(--text-color);
+}
+
+.welcome-text p
+{
+  width:100%;
+  max-width: 620px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 15px 0;
+  color:var(--text-color);
+  margin-bottom: 40px;
+}
+.completare_formular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 420px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px 40px;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  backdrop-filter: blur(20px);
+  margin: 100px auto;
+}
+
+.completare_formular h1 {
+  font-size: 36px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.completare_formular .input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 30px 0;
+  position: relative;
+}
+
+.input-box input {
+
+  flex: 1; 
+ width: 100%;
+ height: 100%;
+ background: transparent;
+ border: none;
+ outline: none;
+ border: 2px solid var(--text-color);
+ border-radius: 40px;
+font-size: 16px;
+color: var(--text-color);
+padding: 20px 45px 20px 20px;
+ 
+}
+
+.input-box input::placeholder{
+  color:var(--text-color);
+}
+
+.input-box i {
+  position:absolute;
+right: 20px;
+  color: var(--text-color); 
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
 
 }
+
+.completare_formular .btn
+{
+  width: 100%;
+  height: 45px;
+  background: var(--logo-color);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color:var(--background-color);
+  font-weight: 600;
+}
+
+
+.completare_formular.success input {
+	border-color: #2ecc71;
+  flex: 1; 
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid var(--text-color);
+  border-radius: 40px;
+ font-size: 16px;
+ color: var(--text-color);
+ padding: 20px 45px 20px 20px;
+}
+
+.completare_formular.error input {
+	border-color: #e74c3c;
+  flex: 1; 
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid var(--text-color);
+  border-radius: 40px;
+ font-size: 16px;
+ color: var(--text-color);
+ padding: 20px 45px 20px 20px;
+}
+
+
+.completare_formular small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+  flex: 1; 
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid var(--text-color);
+  border-radius: 40px;
+ font-size: 16px;
+ color: var(--text-color);
+ padding: 20px 45px 20px 20px;
+}
+
+.completare_formular.error small {
+	visibility: visible;
+  flex: 1; 
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid var(--text-color);
+  border-radius: 40px;
+ font-size: 16px;
+ color: var(--text-color);
+ padding: 20px 45px 20px 20px;
+}
+
+
+table {
+  border-collapse: separate;
+  width: 100%;
+  color: var(--text-color);
+  backdrop-filter: blur(20px);
+  
+ 
+}
+
+td, th {
+  border: 3px solid var(--text-color);
+  text-align: left;
+  padding: 8px;
+  border-radius: 3%;
+}
+
+tr:nth-child(even) {
+ color: var(--navbar-inactive);
+
+}
+

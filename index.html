@@ -13,6 +13,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.freepik.com/512/628/628283.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="6_style.css">
   <script type="text/javascript" src="9_darkmode.js" defer></script>
@@ -64,18 +66,43 @@
 <main class="main">
 
 
-
-<div class="floating-button"><a href="5_contact.html">?</a></div>
-<div class="content">
-  <h1>Acasă</h1>
-  <p>Componente</p>
-  <p>prezentare site</p>
-  <p>prezentare pagini</p>
-  <p>prezentare social media</p>
-  <p><a href="https://www.youtube.com/watch?v=MYFgtnKMDp4&list=PLpwngcHZlPac0R1SCOLMRu6FBZTTuEyF2&ab_channel=CodingNepal">tutorial 1</a></p>
+<section class="welcome">
+  <div class = "welcome-text">
+    <h1>Bun venit în Grădina Virtuală!</h1>
+    <p>Grădina Virtuală este locul unde poți găsi sfaturi utile pentru îngrijirea plantelor tale, tutoriale video și o galerie foto cu plantele noastre preferate. Dacă ai întrebări sau vrei să ne împărtășești experiența ta, nu ezita să ne contactezi!</p>
   </div>
+  <div class="welcome-image">
+    <img src="./poze_site/homepage/welcome2.jpg">
+  </div>
+</section>
 
-
+<h1> Componentele site-ului</h1>
+<table>
+  <tr>
+    <th>Pagină</th>
+    <th>Descriere</th>
+  </tr>
+  <tr>
+    <td>Acasă</td>
+    <td>Aici puteți găsi informații generale despre site</td>
+  </tr>
+  <tr>
+    <td>Sfaturi generale</td>
+    <td>Aici puteți căuta o anumită floare despre o anunmită floare și să aflați sfaturi generale pentru a o îngriji</td>
+  </tr>
+  <tr>
+    <td>Galerie foto</td>
+    <td>Aici avem o colecție de fotografii trimisă de utilizatorii site-ului nostru</td>
+  </tr>
+  <tr>
+    <td>Tutorial video</td>
+    <td>Aici puteți găsi un tutorial video care vă va ajuta în îngrijirea generală a unei plante</td>
+  </tr>
+  <tr>
+    <td>Contact</td>
+    <td>Aici veți găsi un formular de contact unde ne puteți trimite păreri, mesaje și întrebări</td>
+  </tr>
+</table>
 
 <div id="floatButton">
     <asp:Button ID="SaveButton" runat="server" 
@@ -94,7 +121,9 @@
       });
     }
 </script>
-    
+<a href="#" class="to-top"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+<div class="floating-button"><a href="5_contact.html">?</a></div>
+<script src="11_up.js"></script>
 </main>
 
 <footer>

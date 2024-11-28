@@ -61,33 +61,36 @@
         </button>
   
       </div>
+      <script defer src="13_validare_date.js"></script>
   </header>
 
 
-    
 
 <div class="completare_formular">
-  <form action = "">
   <h1> Ai o nelămurire? Contactează-ne!</h1>
-  <div class="input-box">
-      <input type="text" placeholder="Nume" required>
+	<form id="form">
+		<div class="inputbox">
+			<input type="text" placeholder="nume" id="username" />
       <i class="fa-solid fa-user"></i>
-  </div>
-  <div class = "input-box">
-      <input type ="text" placeholder ="Email" required>
+			<small>Error message</small>
+		</div>
+		<div class="inputbox">
+			<input type="email" placeholder="email" id="email" />
       <i class="fa-solid fa-envelope"></i>
-  </div>
-  <div class = "input-box">
-      <input type ="text" placeholder ="Numar de telefon" required>
+			<small>Error message</small>
+		</div>
+		<div class="inputbox">
+			<input type="text" placeholder="telefon" id="telefon"/>
       <i class="fa-solid fa-phone"></i>
-  </div>
-  <div class = "input-box">
-      <input type ="text" placeholder ="Mesaj" required>
+			<small>Error message</small>
+		</div>
+		<div class="inputbox">
+			<input type="text" placeholder="Mesaj" id="mesaj"/>
       <i class="fa-solid fa-comment"></i>
-  </div>
-  <button type="submit" class ="btn">Trimite Mesaj</button>
-
-  </form>
+			<small>Error message</small>
+		</div>
+		<button class="btn">Submit</button>
+	</form>
 </div>
 
 <h1> Ne poti gasi si pe social media:</h1>
@@ -108,6 +111,9 @@
       <span><i class="fab fa-youtube"></i></span>
     </li>
   </ul>
+
+
+  <script src="13_validare_date.js"></script>
 
 </body>
 </html>
