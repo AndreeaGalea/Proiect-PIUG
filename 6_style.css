@@ -973,7 +973,7 @@ tr:nth-child(even) {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
   /* Navbar */
   .navbar {
@@ -1018,6 +1018,7 @@ tr:nth-child(even) {
     width: 90%;
     margin: 50px auto;
     padding: 20px;
+    margin-top: 100px;
   }
 
   /* Popup adjustments */
@@ -1110,6 +1111,8 @@ tr:nth-child(even) {
   width: 100%; 
   height: auto; 
 }
-
+h1{
+  margin-top: 100px;
+}
 
 }
