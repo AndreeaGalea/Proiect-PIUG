@@ -1015,9 +1015,6 @@ tr:nth-child(even) {
 
   /* Contact form adjustments */
   .completare_formular {
-    width: 90%;
-    margin: 50px auto;
-    padding: 20px;
     margin-top: 100px;
   }
 
@@ -1098,6 +1095,7 @@ tr:nth-child(even) {
   overflow-x: auto; 
   scroll-snap-type: x mandatory; 
   padding: 10px; 
+  margin: 0;
 }
 
 .slide_div {
@@ -1113,6 +1111,15 @@ tr:nth-child(even) {
 }
 h1{
   margin-top: 100px;
+}
+
+.box {
+  flex: 1 1 100%; 
+  max-width: 100%;
+}
+
+.img-box {
+  margin: 0 auto; 
 }
 
 }
