@@ -956,47 +956,42 @@ tr:nth-child(even) {
 }
 
 @media (max-width: 768px) {
-  /* Adjust body background for smaller devices */
-  body {
-    background-size: contain; /* Better fitting on smaller screens */
-    padding: 10px;
-  }
 
-  /* Navbar adjustments */
+  /* Navbar */
   .navbar {
-    flex-direction: column; /* Stack links vertically */
+    flex-direction: column; 
     align-items: center;
     padding: 10px;
   }
 
   .links {
-    flex-direction: column; /* Stack links vertically */
+    flex-direction: column; 
     padding-right: 0;
   }
 
   .link-item {
     font-size: 16px;
-    margin-bottom: 10px; /* Add spacing between links */
+    margin-bottom: 10px; 
   }
 
-  /* Welcome section adjustments */
+  /* Welcome */
   .welcome {
-    grid-template-columns: 1fr; /* Stack text and image vertically */
-    gap: 2rem; /* Reduce spacing */
-    text-align: center; /* Center-align text */
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+    text-align: left;
   }
 
   .welcome-text h1 {
-    font-size: 2.5rem; /* Reduce font size */
+    font-size: 2.5rem;
   }
 
   .welcome-text p {
-    font-size: 1.2rem; /* Adjust text size */
+    font-size: 1.2rem; 
   }
 
   .welcome-image {
-    max-width: 100%; /* Fit smaller screens */
-    margin: 0 auto; /* Center image */
+    max-width: 100%;
+    margin: 0 auto; 
   }
 
   /* Contact form adjustments */
