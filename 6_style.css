@@ -955,3 +955,93 @@ tr:nth-child(even) {
 
 }
 
+@media (max-width: 768px) {
+  /* Adjust body background for smaller devices */
+  body {
+    background-size: contain; /* Better fitting on smaller screens */
+    padding: 10px;
+  }
+
+  /* Navbar adjustments */
+  .navbar {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    padding: 10px;
+  }
+
+  .links {
+    flex-direction: column; /* Stack links vertically */
+    padding-right: 0;
+  }
+
+  .link-item {
+    font-size: 16px;
+    margin-bottom: 10px; /* Add spacing between links */
+  }
+
+  /* Welcome section adjustments */
+  .welcome {
+    grid-template-columns: 1fr; /* Stack text and image vertically */
+    gap: 2rem; /* Reduce spacing */
+    text-align: center; /* Center-align text */
+  }
+
+  .welcome-text h1 {
+    font-size: 2.5rem; /* Reduce font size */
+  }
+
+  .welcome-text p {
+    font-size: 1.2rem; /* Adjust text size */
+  }
+
+  .welcome-image {
+    max-width: 100%; /* Fit smaller screens */
+    margin: 0 auto; /* Center image */
+  }
+
+  /* Contact form adjustments */
+  .completare_formular {
+    width: 90%; /* Use most of the screen width */
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  /* Popup adjustments */
+  .popup-container .popup-box {
+    width: 90%; /* Fit within smaller screen */
+    padding: 20px;
+  }
+
+  /* Search bar adjustments */
+  .searchbar {
+    width: 90%; /* Resize search bar */
+    margin: 20px auto;
+  }
+
+  .searchbar input {
+    font-size: 14px; /* Adjust text size */
+  }
+
+  /* Carousel adjustments */
+  .container_imagini {
+    flex-direction: column; /* Stack slides vertically */
+    height: auto;
+  }
+
+  .imgContainer {
+    position: static; /* Remove absolute positioning */
+    margin-bottom: 20px; /* Add spacing between slides */
+  }
+
+  img, .button {
+    height: 200px; /* Adjust size */
+    width: auto;
+  }
+
+  /* Floating buttons */
+  .floating-button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
