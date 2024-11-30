@@ -979,6 +979,7 @@ tr:nth-child(even) {
     grid-template-columns: 1fr; 
     gap: 2rem; 
     text-align: left;
+    margin-top: 100px;
   }
 
   .welcome-text h1 {
