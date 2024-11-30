@@ -955,6 +955,24 @@ tr:nth-child(even) {
 
 }
 
+/* Make the video responsive */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 @media (max-width: 768px) {
 
   /* Navbar */
@@ -997,47 +1015,101 @@ tr:nth-child(even) {
 
   /* Contact form adjustments */
   .completare_formular {
-    width: 90%; /* Use most of the screen width */
+    width: 90%;
     margin: 50px auto;
     padding: 20px;
   }
 
   /* Popup adjustments */
   .popup-container .popup-box {
-    width: 90%; /* Fit within smaller screen */
+    width: 90%;
     padding: 20px;
   }
 
-  /* Search bar adjustments */
+  /* Search bar  */
   .searchbar {
-    width: 90%; /* Resize search bar */
+    width: 90%; 
     margin: 20px auto;
   }
 
   .searchbar input {
-    font-size: 14px; /* Adjust text size */
+    font-size: 14px;
   }
 
-  /* Carousel adjustments */
+  /* Carousel*/
   .container_imagini {
-    flex-direction: column; /* Stack slides vertically */
+    flex-direction: column; 
     height: auto;
   }
 
   .imgContainer {
-    position: static; /* Remove absolute positioning */
-    margin-bottom: 20px; /* Add spacing between slides */
+    position: static; 
+    margin-bottom: 20px; 
   }
 
   img, .button {
-    height: 200px; /* Adjust size */
+    height: 200px;
     width: auto;
   }
 
-  /* Floating buttons */
+
   .floating-button {
     width: 50px;
     height: 50px;
     font-size: 18px;
   }
+  .content
+{
+  margin-top: 100px;
+}
+
+.container_imagini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 20px; 
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.image-container {
+  display: flex;
+  overflow-x: auto; 
+  gap: 10px; 
+  scroll-snap-type: x mandatory; 
+}
+
+.image-container img {
+  flex-shrink: 0; 
+  width: 200px; 
+  height: auto;
+  scroll-snap-align: start; 
+}
+
+.container_imagini {
+  width: 100%; 
+  overflow: hidden; 
+}
+
+.imgContainer {
+  display: flex;
+  gap: 10px; 
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
+  padding: 10px; 
+}
+
+.slide_div {
+  flex-shrink: 0; 
+  width: 200px; 
+  scroll-snap-align: start; 
+  text-align: center; 
+}
+
+.img {
+  width: 100%; 
+  height: auto; 
+}
+
+
 }
