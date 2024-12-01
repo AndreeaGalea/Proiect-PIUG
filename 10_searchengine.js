@@ -66,7 +66,7 @@ const displayItem = (items) => {
             `<div class='box'>
                 <div class='img-box'>
                     <img class='images' src=${image}></img>
-                </div> 
+                </div>
                 <div class='bottom'>
                     <p>${title}</p>
                     <button class="button_pop_up" role="button">Sfaturi</button>
@@ -87,6 +87,7 @@ const displayItem = (items) => {
         button.addEventListener('click', () => {
             const popupContainer = document.querySelectorAll('.popup-container')[index];
             popupContainer.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
         });
     });
 
@@ -94,6 +95,7 @@ const displayItem = (items) => {
         button.addEventListener('click', () => {
             const popupContainer = document.querySelectorAll('.popup-container')[index];
             popupContainer.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
         });
     });
 };

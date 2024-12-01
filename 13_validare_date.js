@@ -31,9 +31,9 @@ function checkInputs() {
 	}
 	
 	if(telefonValue === '') {
-		setErrorFor(telefon, 'Phone number cannot be blank');
-	} else if (!isTelefon(telefonValue)) {
-		setErrorFor(telefon, 'Not a valid phone number');
+		setErrorFor(telefon, 'Telefon cannot be blank');
+	}else if(!isTelefon(telefonValue)) {
+		setErrorFor(telefon, 'Not a valid telefon');
 	} else {
 		setSuccessFor(telefon);
 	}

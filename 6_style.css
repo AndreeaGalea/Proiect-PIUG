@@ -16,6 +16,8 @@
   --navbar-active:#123100;
   --text-color:#123100;
   --background-image: url('./poze_site/fundal/fundal_light.jpg');
+  --popup-background: #f2ecd2;
+  --close-btn: #a3ab7e;
 }
 
 .darkmode
@@ -26,6 +28,8 @@
   --navbar-active:#bbffb4fa;
   --text-color:#deeedcfa;
   --background-image: url('./poze_site/fundal/fundal_dark.jpg');
+  --popup-background: #072b27;
+  --close-btn: #145247;
 
 }
 
@@ -95,6 +99,7 @@ body
 }
 
 
+
 a 
 {
     color: inherit;
@@ -118,6 +123,11 @@ video {
 p
 {
   color:var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 15px 0;
+  margin-bottom: 10px;
 }
 .floating-button
 {
@@ -265,7 +275,6 @@ p
 {
   font-weight: 900;
   color: var(--navbar-active);
-  text-decoration: underline;
 }
 
 /*------------------------------------------------------------------------------------------------------------------*/
@@ -318,6 +327,7 @@ p
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-gap:20px;
+  
 }
 
 .box 
@@ -330,6 +340,7 @@ p
   border: 1px solid #333;
   border-radius: 20px;
   padding: 10px;
+
 }
 
 .img-box 
@@ -339,6 +350,7 @@ p
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .images 
@@ -349,6 +361,7 @@ p
   object-fit: cover;
   object-position: center;
   border-radius: 10%;
+ 
 }
 
 .bottom 
@@ -364,18 +377,13 @@ p
   height: 110px;
 }
 
-h2 
-{
-  font-size: 20px;
-  color: orangered;
-}
+
 /*-----------------------------------------------------------------------------------------------------------------*/
 
 /*BUTOANE POP UP---------------------------------------------------------------------------------------------------*/
 .button_pop_up {
   align-self: center;
   background-color: var(  --background-color);
-  background-image: none;
   background-position: 0 90%;
   font-family: 'Karla', sans-serif;
   background-size: 4px 3px;
@@ -411,21 +419,20 @@ h2
   box-shadow: var(--logo-color);
 }
 
-.popip-container
+.popup-container
 {
-  position: fixed; /* Fixează containerul în raport cu fereastra */
-  top: 50%; /* Poziționează pe verticală la mijloc */
-  left: 50%; /* Poziționează pe orizontală la mijloc */
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%); 
-
   width: 100%;
-  height: 100%;
-  background: seagreen;
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   pointer-events: none;
+  z-index: 10;
 }
 
 
@@ -435,21 +442,20 @@ h2
   opacity: 1;
   pointer-events: auto;
   transition: .4s ease;
-
-
 }
 
 .popup-container .popup-box
 {
   width: 500px;
-  background: white;
+  background: var(--popup-background);
   border-radius: 0 0 10px rgba(0,0,0,.1);
-  padding: 30px;
+  padding: 10px;
   transform: scale(0);
-  max-width: 90%; /* Adaptează dimensiunea pentru ecrane mici */
+  max-width: 70%; /* Adaptează dimensiunea pentru ecrane mici */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Umbră pentru efect */
   transform: scale(0); /* Inițial, este invizibil */
   transition: transform 0.4s ease, opacity 0.4s ease; /* Animație pentru apariție */
+  z-index: 11; /* Ensures the box itself is above the container */
 }
 
 .popup-container.active .popup-box
@@ -460,34 +466,34 @@ h2
 }
 .popup-box h1
 {
-  color: #333;
+  color: var(--text-color);
   line-height: 1;
-  padding: 30px;
+  padding: 10px;
+
 }
 
 p.popup-box p
 {
-  color: #333;
+  color: var(--text-color);
   margin: 12px 0 20px;
+  
 }
 
 .popup-box .close-btn
 {
   align-self: center;
-  background-color: var(  --background-color);
-  background-image: none;
+  background-color: var(--close-btn);
   background-position: 0 90%;
   font-family: 'Karla', sans-serif;
   background-size: 4px 3px;
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: var(--logo-color);
+  border-color: var(--logo-color);
   box-sizing: border-box;
-  color: #41403e;
+  color: var(--text-color);
   cursor: pointer;
   display: inline-block;
-  font-family: Neucha, sans-serif;
   font-size: 1rem;
   line-height: 23px;
   outline: none;
@@ -502,6 +508,7 @@ p.popup-box p
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
 /*-----------------------------------------------------------------------------------------------------------------*/
 
 
@@ -511,81 +518,7 @@ p.popup-box p
 
 
 /*FORMULAR COTACT--------------------------------------------------------------------------------------------------------*/
-.completare_formular {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: 420px;
-  margin: 0 auto;
-  border-radius: 10px;
-  padding: 30px 40px;
-  background: transparent;
-  border: 2px solid var(--text-color);
-  backdrop-filter: blur(20px);
-  margin: 100px auto;
-}
 
-.completare_formular h1 {
-  font-size: 36px;
-  text-align: center;
-  color: var(--text-color);
-}
-
-.completare_formular .inputbox {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  width: 100%;
-  margin: 30px 0;
-  position: relative;
-}
-
-
-.inputbox input {
-
-  flex: 1; 
- width: 100%;
- height: 100%;
- background: transparent;
- border: none;
- outline: none;
- border: 2px solid var(--text-color);
- border-radius: 40px;
-font-size: 16px;
-color: var(--text-color);
-padding: 20px 45px 20px 20px;
- 
-}
-
-.inputbox input::placeholder{
-  color:var(--text-color);
-}
-
-.inputbox i {
-  position:absolute;
-right: 20px;
-  color: var(--text-color); 
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-
-}
-
-.completare_formular .btn
-{
-  width: 100%;
-  height: 45px;
-  background: var(--logo-color);
-  border: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  font-size: 16px;
-  color:var(--background-color);
-  font-weight: 600;
-}
 /*------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -601,7 +534,7 @@ right: 20px;
 
 .imgContainer{
   width: 100%;
-  height: 600px;
+  height: 500px;
   position: absolute;
   left: 0;
   display: flex;
@@ -743,7 +676,7 @@ img{
 }
 
 
-/*------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 section
 {
@@ -755,22 +688,21 @@ section
   position: relative;
   width: 100%;
   height: 100vh;
-  display: grid; /* Enables grid layout */
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
   align-items: center;
-  gap: 20rem;
- 
-  flex-direction: row; /* Arrange items in a row */
-  align-items: center; /* Align items vertically */
-  justify-content: space-between; /* Add spacing between text and image */
+  gap: 10rem;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between; 
 }
 
 .welcome-image
 {
-  flex: 1; /* Allow the image to grow as needed */
+  flex: 1; 
   height: auto;
-  object-fit: cover; /* Ensures the image fills its container neatly */
-  max-width: 100%; /* Prevents oversizing */
+  object-fit: cover; 
+  max-width: 100%; 
 }
 
 .welcome-text h1
@@ -790,8 +722,11 @@ section
   line-height: 1.6;
   margin: 15px 0;
   color:var(--text-color);
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 .completare_formular {
   display: flex;
   flex-direction: column;
@@ -799,13 +734,12 @@ section
   justify-content: center;
   box-sizing: border-box;
   width: 420px;
-  margin: 0 auto;
+  margin: 100px auto;
   border-radius: 10px;
   padding: 30px 40px;
   background: transparent;
   border: 2px solid var(--text-color);
   backdrop-filter: blur(20px);
-  margin: 100px auto;
 }
 
 .completare_formular h1 {
@@ -814,7 +748,7 @@ section
   color: var(--text-color);
 }
 
-.completare_formular .input-box {
+.form-control {
   display: flex;
   align-items: center;
   height: 50px;
@@ -823,116 +757,80 @@ section
   position: relative;
 }
 
-.input-box input {
-
-  flex: 1; 
- width: 100%;
- height: 100%;
- background: transparent;
- border: none;
- outline: none;
- border: 2px solid var(--text-color);
- border-radius: 40px;
-font-size: 16px;
-color: var(--text-color);
-padding: 20px 45px 20px 20px;
- 
+.form-control input {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  border-radius: 40px;
+  font-size: 16px;
+  color: var(--text-color);
+  padding: 20px 45px 20px 20px;
+  outline: none;
 }
 
-.input-box input::placeholder{
-  color:var(--text-color);
+.form-control input::placeholder {
+  color: var(--text-color);
 }
 
-.input-box i {
-  position:absolute;
-right: 20px;
-  color: var(--text-color); 
-  top: 50%;
-  transform: translateY(-50%);
+.form-control i {
+  visibility: hidden;
+  position: absolute;
+  right: 20px;
+  top: 50%; 
+  transform: translateY(-50%); 
   font-size: 20px;
-
+  color: var(--text-color); 
+  background: transparent;
 }
 
-.completare_formular .btn
-{
+.form-control.success i.fa-check-circle {
+	color: #02451e;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #8c040f;
+	visibility: visible;
+}
+
+
+.form-control.success input {
+  border-color: #02451e;
+}
+
+.form-control.error input {
+  border-color: #8c040f;
+}
+
+.form-control small {
+  color: #8c040f;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  visibility: hidden;
+  font-size: 12px;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
   width: 100%;
   height: 45px;
   background: var(--logo-color);
   border: none;
   border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-size: 16px;
-  color:var(--background-color);
+  color: var(--background-color);
   font-weight: 600;
 }
 
-
-.completare_formular.success input {
-	border-color: #2ecc71;
-  flex: 1; 
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid var(--text-color);
-  border-radius: 40px;
- font-size: 16px;
- color: var(--text-color);
- padding: 20px 45px 20px 20px;
-}
-
-.completare_formular.error input {
-	border-color: #e74c3c;
-  flex: 1; 
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid var(--text-color);
-  border-radius: 40px;
- font-size: 16px;
- color: var(--text-color);
- padding: 20px 45px 20px 20px;
-}
-
-
-.completare_formular small {
-	color: #e74c3c;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	visibility: hidden;
-  flex: 1; 
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid var(--text-color);
-  border-radius: 40px;
- font-size: 16px;
- color: var(--text-color);
- padding: 20px 45px 20px 20px;
-}
-
-.completare_formular.error small {
-	visibility: visible;
-  flex: 1; 
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid var(--text-color);
-  border-radius: 40px;
- font-size: 16px;
- color: var(--text-color);
- padding: 20px 45px 20px 20px;
-}
-
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 table {
   border-collapse: separate;
@@ -955,26 +853,19 @@ tr:nth-child(even) {
 
 }
 
-/* Make the video responsive */
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
-}
 
-.video-container iframe,
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 
 @media (max-width: 600px) {
 
+/* Make the video responsive */
+.video-container {
+  position: relative;
+  width: 95%;
+  height: 0;
+  align-items: center;
+  padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
+}
   /* Navbar */
   .navbar {
     flex-direction: column; 
@@ -1015,7 +906,8 @@ tr:nth-child(even) {
 
   /* Contact form adjustments */
   .completare_formular {
-    margin-top: 100px;
+    margin-top: 150px;
+    padding: 15px 20px;
   }
 
   /* Popup adjustments */
@@ -1114,7 +1006,7 @@ h1{
 }
 
 .box {
-  flex: 1 1 100%; 
+  grid-template-columns: repeat(3,1fr); 
   max-width: 100%;
 }
 
