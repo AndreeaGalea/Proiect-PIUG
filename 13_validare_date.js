@@ -17,29 +17,29 @@ function checkInputs() {
 	const mesajValue = mesaj.value.trim();
 	
 	if(usernameValue === '') {
-		setErrorFor(username, 'Username cannot be blank');
+		setErrorFor(username, 'Numele nu poate fi gol');
 	} else {
 		setSuccessFor(username);
 	}
 	
 	if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
+		setErrorFor(email, 'Emailul nu poate fi gol');
 	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
+		setErrorFor(email, 'Adresa de email nu este validă');
 	} else {
 		setSuccessFor(email);
 	}
 	
 	if(telefonValue === '') {
-		setErrorFor(telefon, 'Telefon cannot be blank');
+		setErrorFor(telefon, 'Nr. de telefon nu poate fi gol');
 	}else if(!isTelefon(telefonValue)) {
-		setErrorFor(telefon, 'Not a valid telefon');
+		setErrorFor(telefon, 'NNr. de telefon nu este valid');
 	} else {
 		setSuccessFor(telefon);
 	}
 	
 	if(mesajValue === '') {
-		setErrorFor(mesaj, 'mesaj cannot be blank');
+		setErrorFor(mesaj, 'Mesajul nu poate fi gol');
 	} else{
 		setSuccessFor(mesaj);
 	}

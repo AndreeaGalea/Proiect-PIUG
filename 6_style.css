@@ -13,13 +13,12 @@
 :root
 {
   --background-color: #bbffb4fa;
-  --logo-color:#123100;
+  --logo-color:#1c4901;
   --navbar-inactive:#d50342;
-  --navbar-active:#123100;
-  --text-color:#123100;
-  --background-image: url('./poze_site/fundal/fundal_light.jpg');
+  --text-color:#0d2400;
   --popup-background: #f2ecd2;
   --close-btn: #a3ab7e;
+  --background-image: url('./poze_site/fundal/fundal_light.jpg');
 }
 
 .darkmode
@@ -27,11 +26,10 @@
   --background-color: #131f11f8;
   --logo-color:#bbffb4fa;
   --navbar-inactive:#f87ea3;
-  --navbar-active:#bbffb4fa;
   --text-color:#deeedcfa;
-  --background-image: url('./poze_site/fundal/fundal_dark.jpg');
   --popup-background: #072b27;
   --close-btn: #145247;
+  --background-image: url('./poze_site/fundal/fundal_dark.jpg');
 }
 
 #theme-switch
@@ -243,7 +241,7 @@ p
 
 .link-item:hover
 {
-  color: var(--navbar-active);
+  color: var(--logo-color);
   text-decoration: underline;
 }
 
@@ -263,7 +261,7 @@ p
 .active 
 {
   font-weight: 900;
-  color: var(--navbar-active);
+  color: var(--logo-color);
 }
 
 /*SEARCHBAR----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
