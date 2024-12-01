@@ -844,14 +844,15 @@ tr:nth-child(even)
 @media (max-width: 600px) 
 {
   /*-----------VIDEO-------------- */
-.video-container 
-{
-  position: relative;
-  width: 70%;
-  height: 0;
-  align-items: center;
-  padding-bottom: 56.25%; 
-}
+  .video-container 
+  {
+    position: relative;
+    width: 90%; 
+    max-width: 400px; 
+    height: 0;
+    margin: 0 auto; 
+    padding-bottom: 56.25%; 
+  }
   /*-----------NAVBAR-------------- */
   .navbar 
   {

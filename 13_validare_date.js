@@ -33,7 +33,7 @@ function checkInputs() {
 	if(telefonValue === '') {
 		setErrorFor(telefon, 'Nr. de telefon nu poate fi gol');
 	}else if(!isTelefon(telefonValue)) {
-		setErrorFor(telefon, 'NNr. de telefon nu este valid');
+		setErrorFor(telefon, 'Nr. de telefon nu este valid');
 	} else {
 		setSuccessFor(telefon);
 	}
