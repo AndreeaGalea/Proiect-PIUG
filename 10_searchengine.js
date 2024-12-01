@@ -82,7 +82,6 @@ const displayItem = (items) => {
         );
     }).join('');
 
-    // Adaugă evenimentele după generare
     document.querySelectorAll('.button_pop_up').forEach((button, index) => {
         button.addEventListener('click', () => {
             const popupContainer = document.querySelectorAll('.popup-container')[index];
@@ -95,10 +94,9 @@ const displayItem = (items) => {
         button.addEventListener('click', () => {
             const popupContainer = document.querySelectorAll('.popup-container')[index];
             popupContainer.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto'; 
         });
     });
 };
 
-// Initial display
 displayItem(categories);
